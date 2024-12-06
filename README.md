@@ -1,110 +1,51 @@
-# hora-de-codar-8
 
-# 💳 Caixa Eletrônico em Java
+# Sistema de Caixa Eletrônico 🚀
 
-Bem-vindo ao sistema de **Caixa Eletrônico**! Este projeto simula operações bancárias básicas, como saques, depósitos, transferências e consulta de saldo. Além disso, possui uma interface simples de menu para interação com o usuário, incluindo mensagens personalizadas e validações de segurança.
-
----
-
-## 📋 Funcionalidades
-
-1. **Saudação Inicial**  
-   - Ao acessar o sistema, o usuário informa seu nome e recebe uma mensagem personalizada:  
-     _"Olá {Nome}, é um prazer ter você por aqui!"_
-
-2. **Menu Principal**  
-   - Opções disponíveis:
-     1. Criar Conta  
-     2. Saldo  
-     3. Extrato  
-     4. Saque  
-     5. Depósito  
-     6. Transferência  
-     7. Sair  
-
-3. **Validação de Senha**  
-   - Para realizar operações como consultar saldo, saque, extrato ou transferência, o sistema solicita uma senha (padrão: `3589`).  
-   - Se a senha for incorreta, o sistema solicita novamente antes de prosseguir.
-
-4. **Criação de Contas**  
-   - O usuário pode criar novas contas informando um número exclusivo.
-
-5. **Consulta de Saldo**  
-   - Permite verificar o saldo atual da conta, desde que a senha esteja correta.
-
-6. **Exibição do Extrato**  
-   - Exibe um histórico das transações realizadas, como saques, depósitos e transferências.
-
-7. **Saques com Validação**  
-   - Não permite:
-     - Saques maiores que o saldo disponível.
-     - Valores iguais ou menores que zero.
-
-8. **Depósitos com Validação**  
-   - Não permite:
-     - Depósitos com valores iguais ou menores que zero.
-
-9. **Transferências com Validação**  
-   - Permite transferir para qualquer número de conta (desde que seja numérico).  
-   - Não permite:
-     - Transferências maiores que o saldo disponível.
-     - Valores iguais ou menores que zero.
-
-10. **Mensagem de Despedida**  
-    - Ao sair, o sistema exibe:  
-      _"{Nome}, foi um prazer ter você por aqui!"_
+Bem-vindo ao sistema de Caixa Eletrônico desenvolvido em **Java**! Este sistema possui funcionalidades básicas e avançadas para gerenciamento de contas, saldo, transferências e mais. Ele foi projetado para oferecer uma experiência de aprendizado prática e divertida. 😊
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Funcionalidades Implementadas 🛠️
 
-- **Java**: Linguagem principal do projeto.
-- **Scanner**: Para leitura de entrada do usuário.
-- **ArrayList**: Para armazenar contas e histórico do extrato.
+1. **Saudação personalizada**: 
+   - Ao iniciar, o sistema pergunta o nome do usuário e exibe uma mensagem de boas-vindas.
+   
+2. **Criação de contas**: 
+   - Permite criar contas novas com um número personalizado.
 
----
+3. **Consulta de saldo**: 
+   - Exibe o saldo atual da conta do usuário.
 
-## 🚀 Como Executar o Sistema
+4. **Extrato de transações**: 
+   - Exibe um histórico detalhado de saques, depósitos e transferências.
 
-1. Clone este repositório em sua máquina:
-   ```bash
-   git clone https://github.com/seu-usuario/caixa-eletronico-java.git
-   ```
-2. Navegue até o diretório do projeto:
-   ```bash
-   cd caixa-eletronico-java
-   ```
-3. Compile o arquivo principal:
-   ```bash
-   javac CaixaEletronico.java
-   ```
-4. Execute o programa:
-   ```bash
-   java CaixaEletronico
-   ```
+5. **Saque de dinheiro**:
+   - Validações:
+     - O valor não pode ser igual ou menor que zero.
+     - O saldo restante não pode ser negativo.
 
----
+6. **Depósito de dinheiro**:
+   - Validações:
+     - O valor do depósito não pode ser igual ou menor que zero.
 
-## 📂 Estrutura do Projeto
+7. **Transferência de dinheiro**:
+   - Validações:
+     - O número da conta deve conter apenas dígitos.
+     - O valor da transferência não pode ser maior que o saldo disponível.
+     - O valor não pode ser igual ou menor que zero.
 
-```plaintext
-├── CaixaEletronico.java    # Arquivo principal do sistema
-├── README.md               # Documentação do projeto
-```
+8. **Validação de senha**:
+   - A senha padrão é `3589`. Operações como saldo, saque, extrato e transferência exigem autenticação.
 
----
+9. **Menu principal organizado**:
+   - Opções exibidas em ordem lógica: Criar Conta, Saldo, Extrato, Saque, Depósito, Transferência e Sair.
 
-## 🔐 Regras e Validações
-
-- **Senha padrão**: `3589` (para operações críticas).
-- Operações não permitidas:
-  - Saques ou transferências com valores maiores que o saldo disponível.
-  - Depósitos, saques ou transferências com valores iguais ou menores que zero.
-  - Transferências para contas com caracteres inválidos.
+10. **Mensagem de saída personalizada**:
+    - Ao sair, uma mensagem de despedida personalizada é exibida.
 
 ---
 
-## 📝 Exemplo de Execução
+## Fluxo de Uso 💡
 
 ### Menu Principal:
 ```plaintext
@@ -119,24 +60,191 @@ Bem-vindo ao sistema de **Caixa Eletrônico**! Este projeto simula operações b
 Escolha uma opção: 
 ```
 
-### Saudação:
+### Exemplo de Saudação:
 ```plaintext
 Informe seu nome: João
 Olá João, é um prazer ter você por aqui!
 ```
 
-### Operações com Validação:
+### Validação de Senha:
 ```plaintext
-Informe sua senha: 1234
+Informe sua senha: 
 Senha incorreta. Tente novamente.
-
-Informe sua senha: 3589
-Seu saldo atual é: R$1000.0
 ```
 
-### Mensagem ao Sair:
+### Exemplo de Mensagem de Saída:
 ```plaintext
 João, foi um prazer ter você por aqui!
 ```
+
+---
+
+## Código Fonte 📂
+
+```
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CaixaEletronico {
+
+    static Scanner scanner = new Scanner(System.in);
+    static String nomeUsuario;
+    static double saldo = 1000.00; // Saldo inicial fictício
+    static String senhaCorreta = "3589";
+    static ArrayList<String> extrato = new ArrayList<>();
+    static ArrayList<String> contas = new ArrayList<>();
+
+    public static void main(String[] args) {
+        // Inicializa contas fictícias
+        contas.add("12345");
+        contas.add("67890");
+
+        System.out.print("Informe seu nome: ");
+        nomeUsuario = scanner.nextLine();
+        System.out.println("Olá " + nomeUsuario + ", é um prazer ter você por aqui!");
+
+        int opcao;
+        do {
+            exibirMenu();
+            opcao = scanner.nextInt();
+            scanner.nextLine(); // Limpar buffer
+            switch (opcao) {
+                case 1 -> criarConta();
+                case 2 -> consultarSaldo();
+                case 3 -> exibirExtrato();
+                case 4 -> sacarDinheiro();
+                case 5 -> depositarDinheiro();
+                case 6 -> transferirDinheiro();
+                case 7 -> sair();
+                default -> System.out.println("Opção inválida. Tente novamente.");
+            }
+        } while (opcao != 7);
+    }
+
+    public static void exibirMenu() {
+        System.out.println("\n--- Menu Principal ---");
+        System.out.println("1. Criar Conta");
+        System.out.println("2. Saldo");
+        System.out.println("3. Extrato");
+        System.out.println("4. Saque");
+        System.out.println("5. Depósito");
+        System.out.println("6. Transferência");
+        System.out.println("7. Sair");
+        System.out.print("Escolha uma opção: ");
+    }
+
+    public static void criarConta() {
+        System.out.print("Informe o número da nova conta: ");
+        String novaConta = scanner.nextLine();
+        contas.add(novaConta);
+        System.out.println("Conta " + novaConta + " criada com sucesso!");
+    }
+
+    public static void consultarSaldo() {
+        if (validarSenha()) {
+            System.out.println("Seu saldo atual é: R$" + saldo);
+        }
+    }
+
+    public static void exibirExtrato() {
+        if (validarSenha()) {
+            System.out.println("\n--- Extrato ---");
+            if (extrato.isEmpty()) {
+                System.out.println("Nenhuma movimentação encontrada.");
+            } else {
+                for (String transacao : extrato) {
+                    System.out.println(transacao);
+                }
+            }
+        }
+    }
+
+    public static void sacarDinheiro() {
+        if (validarSenha()) {
+            System.out.print("Informe o valor do saque: R$");
+            double valor = scanner.nextDouble();
+
+            if (valor <= 0) {
+                System.out.println("Operação não autorizada: valor inválido.");
+            } else if (valor > saldo) {
+                System.out.println("Operação não autorizada: saldo insuficiente.");
+            } else {
+                saldo -= valor;
+                extrato.add("Saque: -R$" + valor);
+                System.out.println("Saque de R$" + valor + " realizado com sucesso!");
+            }
+        }
+    }
+
+    public static void depositarDinheiro() {
+        System.out.print("Informe o valor do depósito: R$");
+        double valor = scanner.nextDouble();
+
+        if (valor <= 0) {
+            System.out.println("Operação não autorizada: valor inválido.");
+        } else {
+            saldo += valor;
+            extrato.add("Depósito: +R$" + valor);
+            System.out.println("Depósito de R$" + valor + " realizado com sucesso!");
+        }
+    }
+
+    public static void transferirDinheiro() {
+        if (validarSenha()) {
+            System.out.print("Informe o número da conta de destino: ");
+            String contaDestino = scanner.nextLine();
+
+            if (!contaDestino.matches("\\d+")) {
+                System.out.println("Operação não autorizada: número de conta inválido.");
+                return;
+            }
+
+            System.out.print("Informe o valor da transferência: R$");
+            double valor = scanner.nextDouble();
+
+            if (valor <= 0) {
+                System.out.println("Operação não autorizada: valor inválido.");
+            } else if (valor > saldo) {
+                System.out.println("Operação não autorizada: saldo insuficiente.");
+            } else {
+                saldo -= valor;
+                extrato.add("Transferência para conta " + contaDestino + ": -R$" + valor);
+                System.out.println("Transferência de R$" + valor + " para a conta " + contaDestino + " realizada com sucesso!");
+            }
+        }
+    }
+
+    public static boolean validarSenha() {
+        System.out.print("Informe sua senha: ");
+        String senha = scanner.nextLine();
+
+        if (!senha.equals(senhaCorreta)) {
+            System.out.println("Senha incorreta. Tente novamente.");
+            return false;
+        }
+        return true;
+    }
+
+    public static void sair() {
+        System.out.println(nomeUsuario + ", foi um prazer ter você por aqui!");
+    }
+}
+
+```
+
+---
+
+## Como Executar o Projeto? ▶️
+
+1. Certifique-se de ter o **Java JDK** instalado na sua máquina.
+2. Copie o arquivo `CaixaEletronico.java` para o seu ambiente de desenvolvimento.
+3. Compile o código com o comando:
+   ```bash
+   javac CaixaEletronico.java
+   ```
+4. Execute o programa com:
+   ```bash
+   java CaixaEletronico
+   ```
 
 ---
